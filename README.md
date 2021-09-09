@@ -18,4 +18,14 @@ Pinging c-lightning node
 
 Process diagram: https://v.gd/ouBvmq
 
+```mermaid
+sequenceDiagram
+    participant Alertify
+    Alertify ->> c-lightning: Ping
+    c-lightning ->> Alertify: Pong
+    Alertify ->> Twilio: Request sending of SMS
+    Twilio ->> Cellphone: SMS
+    Twilio ->> Alertify: Confirmation hash
+```
+
 [![](https://mermaid.ink/img/eyJjb2RlIjoic2VxdWVuY2VEaWFncmFtXG4gICAgcGFydGljaXBhbnQgQWxlcnRpZnlcbiAgICBBbGVydGlmeSAtPj4gYy1saWdodG5pbmc6IFBpbmdcbiAgICBjLWxpZ2h0bmluZyAtPj4gQWxlcnRpZnk6IFBvbmdcbiAgICBBbGVydGlmeSAtPj4gVHdpbGlvOiBSZXF1ZXN0IHNlbmRpbmcgb2YgU01TXG4gICAgVHdpbGlvIC0-PiBDZWxscGhvbmU6IFNNU1xuICAgIFR3aWxpbyAtPj4gQWxlcnRpZnk6IENvbmZpcm1hdGlvbiBoYXNoIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifSwidXBkYXRlRWRpdG9yIjpmYWxzZSwiYXV0b1N5bmMiOnRydWUsInVwZGF0ZURpYWdyYW0iOmZhbHNlfQ)](https://mermaid-js.github.io/mermaid-live-editor/edit/##eyJjb2RlIjoic2VxdWVuY2VEaWFncmFtXG4gICAgcGFydGljaXBhbnQgQWxlcnRpZnlcbiAgICBBbGVydGlmeSAtPj4gYy1saWdodG5pbmc6IFBpbmdcbiAgICBjLWxpZ2h0bmluZyAtPj4gQWxlcnRpZnk6IFBvblxuICAgIEFsZXJ0aWZ5IC0-PiBUd2lsaW86IFJlcXVlc3Qgc2VuZGluZyBvZiBTTVNcbiAgICBUd2lsaW8gLT4-IENlbGxwaG9uZTogU01TXG4gICAgVHdpbGlvIC0-PiBBbGVydGlmeTogQ29uZmlybWF0aW9uIGhhc2giLCJtZXJtYWlkIjoie1xuICBcInRoZW1lXCI6IFwiZGVmYXVsdFwiXG59IiwidXBkYXRlRWRpdG9yIjpmYWxzZSwiYXV0b1N5bmMiOnRydWUsInVwZGF0ZURpYWdyYW0iOmZhbHNlfQ)
