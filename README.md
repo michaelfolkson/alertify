@@ -26,8 +26,6 @@ sequenceDiagram
     Twilio ->> Alertify: Confirmation hash
 ```
 
-[![](https://mermaid.ink/img/eyJjb2RlIjoic2VxdWVuY2VEaWFncmFtXG4gICAgcGFydGljaXBhbnQgQWxlcnRpZnlcbiAgICBBbGVydGlmeSAtPj4gYy1saWdodG5pbmc6IFBpbmdcbiAgICBjLWxpZ2h0bmluZyAtPj4gQWxlcnRpZnk6IFBvbmdcbiAgICBBbGVydGlmeSAtPj4gVHdpbGlvOiBSZXF1ZXN0IHNlbmRpbmcgb2YgU01TXG4gICAgVHdpbGlvIC0-PiBDZWxscGhvbmU6IFNNU1xuICAgIFR3aWxpbyAtPj4gQWxlcnRpZnk6IENvbmZpcm1hdGlvbiBoYXNoIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifSwidXBkYXRlRWRpdG9yIjpmYWxzZSwiYXV0b1N5bmMiOnRydWUsInVwZGF0ZURpYWdyYW0iOmZhbHNlfQ)
-
 Receive SMS alert when there is Lightning channel cheat attempt
 
 Process diagram: https://v.gd/3uyJKP
