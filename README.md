@@ -1,5 +1,32 @@
 Checks site for Bitcoin price data
 
+Clone the repo and cd into it:
+
+`git clone git@github.com:michaelfolkson/alertify.git`
+
+`cd alertify`
+
+Install virtualenv:
+
+`pip install virtualenv`
+
+In your project directory make a virtual environment:
+
+`python3 -m venv alertify_venv`
+
+Activate the virtual environment:
+
+`source alertify_venv/bin/activate`
+
+Install the requirements:
+
+`pip install -r requirements.txt`
+
+Deactivate the virtual environment:
+
+`deactivate`
+
+
 Process diagram: https://v.gd/0cBnHM
 
 ```mermaid
