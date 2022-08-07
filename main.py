@@ -26,7 +26,7 @@ def send_sms():
     print("Sending SMS")
     message = smsalert.client.messages \
                     .create(
-                         body="The Bitcoin price is now....",
+                         body="The Bitcoin price is currently above 20,000 USD",
                      from_= secrets.twilio_phone,
                      to= secrets.my_phone
                  )
