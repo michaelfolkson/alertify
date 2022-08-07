@@ -22,6 +22,11 @@ Install the requirements:
 
 `pip3 install -r requirements.txt`
 
+Run main.py in the virtual environment:
+
+`python3 main.py`
+
+
 Deactivate the virtual environment:
 
 `deactivate`
