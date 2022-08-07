@@ -6,9 +6,9 @@ Clone the repo and cd into it:
 
 `cd alertify`
 
-Install virtualenv:
+Install virtualenv (you'll be able to use pip3 if you have installed Python3):
 
-`pip install virtualenv`
+`pip3 install virtualenv`
 
 In your project directory make a virtual environment:
 
@@ -20,7 +20,7 @@ Activate the virtual environment:
 
 Install the requirements:
 
-`pip install -r requirements.txt`
+`pip3 install -r requirements.txt`
 
 Deactivate the virtual environment:
 
