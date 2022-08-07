@@ -36,7 +36,7 @@ def send_sms():
 while True:
   print("Checking prices")
   time.sleep(5)
-  if is_price_too_high(40000) == True:
+  if is_price_too_high(20000) == True:
       send_sms()
       sys.exit()
   else: print("The price is not too high")
