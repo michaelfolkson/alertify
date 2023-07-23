@@ -53,7 +53,7 @@ def send_sms():
 while True:
   print("Checking transactions at address")
   time.sleep(5)
-  if is_tx_count_different(506) == True:
+  if is_tx_count_different(545) == True:
       send_sms()
       sys.exit()
   else: print("No new transactions at this address")
