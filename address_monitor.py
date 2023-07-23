@@ -14,23 +14,30 @@ def checksite():
     return jsonresponse
 
 mempool = checksite()
-print(mempool)
+# print(mempool)
 
 blockheight = requests.get("https://blockstream.info/api/blocks/tip/height")
 print(blockheight.text)
 
-def checkaddress():
+
+url = "https://blockstream.info/api/address/"
+
+# or "https://mempool.space/api/address/"
+# or "https://mempool.space/signet/api/address/
+
+address = "bc1qs7gd29ptzvyc8s9etpcp07xny6v6krz3jhklya"
+threshold = 545
+
+def checkaddress(url, address):
     """Get the latest tx count of address"""
-    response = requests.get("https://blockstream.info/api/address/bc1qs7gd29ptzvyc8s9etpcp07xny6v6krz3jhklya")
+    response = requests.get(url + address)
     jsonresponse = json.loads(response.text)
     return jsonresponse
 
-address_info = checkaddress()
+address_info = checkaddress(url, address)
 print(address_info["chain_stats"])
 print(address_info["chain_stats"]["tx_count"])
 tx_count = (address_info["chain_stats"]["tx_count"])
-
-# https://blockstream.info/api/address/bc1qs7gd29ptzvyc8s9etpcp07xny6v6krz3jhklya
 
 def is_tx_count_different(threshold):
     """Returns whether the tx count is above a certain threshold or not, boolean"""
@@ -53,7 +60,7 @@ def send_sms():
 while True:
   print("Checking transactions at address")
   time.sleep(5)
-  if is_tx_count_different(545) == True:
+  if is_tx_count_different(threshold) == True:
       send_sms()
       sys.exit()
   else: print("No new transactions at this address")
