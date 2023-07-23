@@ -9,13 +9,13 @@ import sys
 
 def checksite():
     """Requests various Bitcoin price data from Bitfinex"""
-    response = requests.get("https://api.bitfinex.com/v1/ticker/btcusd")
+    response = requests.get("https://api-pub.bitfinex.com/v2/ticker/tBTCUSD")
     jsonresponse = json.loads(response.text)
     return jsonresponse
 
 def is_price_too_high(threshold):
     """Returns whether the price is above a certain threshold or not, boolean"""
-    price=checksite()["mid"]
+    price=checksite()[6]
     price=float(price)
     if price > threshold:
         result = True
