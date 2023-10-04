@@ -13,36 +13,6 @@ def index_alertify(request):
         template = alertify_index_file.read()
     return bsapp.render(request, template)
 
-@bsapp.post(url_prefix + '/runscript/')
-def append_script(request):
-    '''Update a table of scripts as entered.
-
-    You can invoke it by adding web links to an HTML page
-    that refer to /update_cmd/.
-    '''
-    with open("bitscripter_data.json") as data_file:
-        data = json.load(data_file)
-
-    new_script = request.POST.get('runscript', '---').strip()
-
-
-    data['scripts'].append(new_script)
-
-    with open("bitscripter_data.json", "w") as data_file:
-        json.dump(data, data_file, indent=4)
-
-    # Run the script
-    LOGGER.info("Script is as follows: " + str(new_script))
-    new_script_result = str(bitscripter.stackit(new_script))
-
-    # Add the script result
-    data['results'].append(new_script_result)
-    with open("bitscripter_data.json", "w") as data_file:
-        json.dump(data, data_file, indent=4)
-
-    return bsapp.redirect(request, url_prefix + '/')
-
-
 # This just makes sure that we can still import this as
 # a library or run it standalone.
 if __name__ == "__main__":
