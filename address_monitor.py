@@ -20,13 +20,13 @@ blockheight = requests.get("https://blockstream.info/api/blocks/tip/height")
 print(blockheight.text)
 
 
-url = "https://blockstream.info/api/address/"
+url = "https://mempool.space/signet/api/address/"
 
 # or "https://mempool.space/api/address/"
-# or "https://mempool.space/signet/api/address/
+# or "https://blockstream.info/api/address/"
 
-address = "bc1qs7gd29ptzvyc8s9etpcp07xny6v6krz3jhklya"
-threshold = 545
+address = "tb1qusjgdyt0d6rw0lh0xdqevpa3aste4j9n4cj4y6"
+threshold = 0
 
 def checkaddress(url, address):
     """Get the latest tx count of address"""
